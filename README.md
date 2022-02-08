@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+See test cases in `spec/schema_spec.rb`.
 
-Things you may want to cover:
+Run:
 
-* Ruby version
+```
+bundle
+bin/rails spec
+```
 
-* System dependencies
+Output excerpt:
 
-* Configuration
+```
+.F
 
-* Database creation
+Failures:
 
-* Database initialization
+  1) GraphqlValidationComplexitySchema errors with connection type
+     Failure/Error: result = described_class.execute(query_string, max_complexity: 100)
 
-* How to run the test suite
+     NoMethodError:
+       undefined method `[]' for #<GraphQL::Schema::Validator::ValidationFailedError:0x000000011d389c80>
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
